@@ -5,6 +5,7 @@ class ClassroomsController < ApplicationController
   # GET /classrooms.json
   def index
     @classrooms = Classroom.all
+  
   end
 
   # GET /classrooms/1
@@ -15,6 +16,8 @@ class ClassroomsController < ApplicationController
   # GET /classrooms/new
   def new
     @classroom = Classroom.new
+    @students = Student.all
+    @courses = Course.all
   end
 
   # GET /classrooms/1/edit
@@ -26,6 +29,7 @@ class ClassroomsController < ApplicationController
   def create
     @classroom = Classroom.new(classroom_params)
 
+    
     respond_to do |format|
       if @classroom.save
         format.html { redirect_to @classroom, notice: 'Classroom was successfully created.' }

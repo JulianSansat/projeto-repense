@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.number_field :status %>
+    <%= f.number_field(:status, in: 0..1) %>
   </div>
   <div class="actions">
     <%= f.submit %>

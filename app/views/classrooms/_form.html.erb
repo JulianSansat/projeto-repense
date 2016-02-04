@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :student_id %><br>
-    <%= f.text_field :student_id %>
+    <%= collection_select(:classroom, :student_id, @students, :id, :name, {:prompt => false}) %>
   </div>
   <div class="field">
     <%= f.label :course_id %><br>
-    <%= f.text_field :course_id %>
+    <%= collection_select(:classroom, :course_id, @courses, :id, :name, {:prompt => false}) %>
   </div>
   <div class="actions">
     <%= f.submit %>
