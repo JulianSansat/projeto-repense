@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :course_id %><br>
-    <%= collection_select(:classroom, :course_id, @courses, :id, :name, {:prompt => false}) %>
+    <%= f.collection_select :course_id, Course.order(:name), :id, :name, include_blank: false %>
   </div>
   <div class="actions">
     <%= f.submit %>

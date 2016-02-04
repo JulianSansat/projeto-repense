@@ -1,7 +1,7 @@
 class Classroom < ActiveRecord::Base
   belongs_to :student
   belongs_to :course
-
+  validates :student, presence: true
 
   def student_name
   	student.try(:name)

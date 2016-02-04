@@ -5,7 +5,7 @@ class ClassroomsController < ApplicationController
   # GET /classrooms.json
   def index
     @classrooms = Classroom.all
-  
+    @courses = Course.all
   end
 
   # GET /classrooms/1
@@ -17,7 +17,6 @@ class ClassroomsController < ApplicationController
   def new
     @classroom = Classroom.new
     @students = Student.all
-    @courses = Course.all
   end
 
   # GET /classrooms/1/edit
@@ -73,6 +72,6 @@ class ClassroomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def classroom_params
-      params.require(:classroom).permit(:entry_at, :student_id, :course_id)
+      params.require(:classroom).permit(:entry_at, :student_name, :course_id)
     end
 end
