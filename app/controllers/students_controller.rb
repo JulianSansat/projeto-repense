@@ -7,6 +7,12 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  # GET /students
+  # GET /students.json
+  def search
+    @students = Student.order(:name).where("name ilike ?", "%#{params[:term]}%")
+    render json: @students.map(&:name)
+  end
   # GET /students/1
   # GET /students/1.json
   def show

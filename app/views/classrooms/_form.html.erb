@@ -16,8 +16,8 @@
     <%= f.datetime_select :entry_at %>
   </div>
   <div class="field">
-    <%= f.label :student_id %><br>
-    <%= collection_select(:classroom, :student_id, @students, :id, :name, {:prompt => false}) %>
+    <%= f.label :student_name %><br>
+    <%= f.text_field :student_name, data: {autocomplete_source: search_students_path} %>
   </div>
   <div class="field">
     <%= f.label :course_id %><br>
