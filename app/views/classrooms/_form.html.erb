@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :Nome %><br>
-    <%= f.text_field :student_name, data: {autocomplete_source: search_students_url}, class: "form-control", :placeholder => "Comece a digitar para auto completar o nome" %>
+    <%= f.text_field :student_name, data: {autocomplete_source: search_students_url}, class: "form-control", :placeholder => "Comece a digitar para auto completar o nome, somente podem ser matriculados alunos cadastrados" %>
   </div>
   <div class="field">
     <%= f.label :Curso %><br>
