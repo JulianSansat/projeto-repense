@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :entry_at %><br>
-    <%= f.datetime_select :entry_at %>
+    <%= f.label :Data %><br>
+    <%= f.datetime_select :entry_at%>
   </div>
   <div class="field">
-    <%= f.label :student_name %><br>
-    <%= f.text_field :student_name, data: {autocomplete_source: search_students_url} %>
+    <%= f.label :Nome %><br>
+    <%= f.text_field :student_name, data: {autocomplete_source: search_students_url}, class: "form-control", :placeholder => "Comece a digitar para auto completar o nome" %>
   </div>
   <div class="field">
-    <%= f.label :course_id %><br>
-    <%= f.collection_select :course_id, Course.order(:name), :id, :name, include_blank: false %>
+    <%= f.label :Curso %><br>
+    <%= f.collection_select :course_id, Course.order(:name), :id, :name, {prompt: "Selecione um curso"}, {class: "form-control"} %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Matricular', :class => 'btn btn-default' %>
   </div>
 <% end %>

@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :nome %><br>
+    <%= f.text_field :name, class: "form-control"%>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.label :Descrição %><br>
+    <%= f.text_field :description, class: "form-control"%>
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.number_field(:status, in: 0..1) %>
+    <%= f.number_field(:status, in: 0..1, class: "form-control") %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Criar', :class => 'btn btn-default' %>
   </div>
 <% end %>

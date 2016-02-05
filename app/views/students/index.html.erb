@@ -1,31 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Students</h1>
+ <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <h1>Alunos</h1>
+          <% @students.each do |student| %>
+          <div class="post-preview">
+            <article class="row">
+              <section class="col-md-8">
+                  <h2 class="post-title">
+                    <small>  Aluno </small> &nbsp; <span class="glyphicon glyphicon-education" aria-hidden="true"></span> &nbsp; <i> <%= student.name %> </i>
+                  </h2>
+                  <h3 class="post-subtitle">
+                    <small>  Numero de registro </small> &nbsp; <span class="glyphicon glyphicon-book" aria-hidden="true"></span> &nbsp; <i> <%= student.register_number %></i>
+                  </h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Register number</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @students.each do |student| %>
-      <tr>
-        <td><%= student.name %></td>
-        <td><%= student.register_number %></td>
-        <td><%= student.status %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Student', new_student_path %>
+                <p class="post-meta"><small> Status</small> &nbsp; <span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp; <i> <%= student.status %></i> </p>
+              </section>
+              <section class="col-md-4">
+                <div class="btn-group-vertical" role="group" aria-label="...">
+                 <%= link_to 'Edit', edit_student_path(student) , class: "btn btn-default" %>
+                  <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+                </div>
+              </section>
+            </article>
+          </div> 
+          <hr>
+          <% end %>
+          </div>
+        </div>
+  </div>
