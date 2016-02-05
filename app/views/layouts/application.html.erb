@@ -5,10 +5,357 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Courses</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                  <li>
+                      <a href="index.html">Listagem</a>
+                  </li>
+                  <!-- Button trigger modal -->
+              <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newStudent">
+                Launch demo modal
+              </button> -->
+                  <li>
+                      <a href="#" data-toggle="modal" data-target="#newClassroom">Matricula Aluno</a>
+                  </li>
+
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#newStudent">Cadastrar Aluno</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#newCourse">Cadastrar Curso</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+	 <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('assets/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Listing Classrooms</h1>
+                        <hr class="small">
+                        <span class="subheading">bla bla la baosdk </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
 <%= yield %>
+
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- [[[[[[[[[]]]]]]]]]  ** MODAL ** ((((((((((((((())))))))))))))) -->
+
+<!-- Modal new student-->
+<div class="modal fade" id="newStudent" tabindex="-1" role="dialog" aria-labelledby="newStudentLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="newStudentLabel">Cadastrar Aluno</h4>
+      </div>
+      <div class="modal-body">
+        <!-- ********************** modal-body **************** -->
+
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
+
+              <form name="sentMessage" id="contactForm" novalidate>
+                <div class="row control-group">
+                  <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="row control-group">
+                  <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Register Number</label>
+                    <input type="email" class="form-control" placeholder="Register Number" id="Register Number" required data-validation-required-message="Please enter your Register Number.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="row control-group">
+                  <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Status</label>
+                    <select class="form-control"  placeholder="Status" id="Status">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+
+                <br>
+                <div id="success"></div>
+                <div class="row">
+                  <div class="form-group col-xs-12">
+                    <button type="submit" class="btn btn-default">Save</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        <!-- ********************** /modal-body **************** -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> <!-- /Modal new student-->
+
+<!-- Modal new Classroom-->
+<div class="modal fade" id="newClassroom" tabindex="-1" role="dialog" aria-labelledby="newClassroomLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="newClassroomLabel">Matrícula Aluno</h4>
+      </div>
+      <div class="modal-body">
+        <!-- ********************** modal-body **************** -->
+
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
+
+            <form name="sentMessage" id="contactForm" novalidate>
+              <div class="row control-group">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                  <h5> Entry at</h5>
+
+                  <div class="row">
+                    <div class="col-md-3">
+                      <select class="form-control"  placeholder="ano" id="ano">
+                        <option>2016</option>
+                        <option>2018</option>
+                        <option>2109</option>
+                        <option>2020</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-control"  placeholder="mes" id="mes">
+                        <option>Fevereiro</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <select class="form-control"  placeholder="dia" id="dia">
+                        <option>04</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                      </select>
+
+                    </div>
+
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <select class="form-control"  placeholder="hora" id="hora">
+                        <option>22</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                      </select>
+
+                    </div>
+
+                    <div class="col-md-6">
+                      <select class="form-control"  placeholder="minutos" id="minutos">
+                        <option>42</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+                  <p class="help-block text-danger"></p>
+                </div>
+                </div>
+                <div class="row control-group">
+                  <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Student Name</label>
+                    <input type="text" class="form-control" placeholder="Student Name" id="Student Name" required data-validation-required-message="Please enter your .">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="row control-group">
+                  <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Course</label>
+                    <select class="form-control"  placeholder="Course" id="Course">
+                      <option>Algorítmos</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+
+                <br>
+                <div id="success"></div>
+                <div class="row">
+                  <div class="form-group col-xs-12">
+                    <button type="submit" class="btn btn-default">Save</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- ********************** /modal-body **************** -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div> <!-- /Modal new classroom-->
+
+<!-- Modal new Course-->
+<div class="modal fade" id="newCourse" tabindex="-1" role="dialog" aria-labelledby="newCourseLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="newCourseLabel">Cadastrar Curso</h4>
+      </div>
+      <div class="modal-body">
+        <!-- ********************** modal-body **************** -->
+
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
+              <form name="sentMessage" id="contactForm" novalidate>
+                <div class="row control-group">
+                  <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="row control-group">
+                  <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Descrição</label>
+                    <input type="email" class="form-control" placeholder="Descrição" id="Descrição" required data-validation-required-message="Please enter your Register Number.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="row control-group">
+                  <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Status</label>
+                    <select class="form-control"  placeholder="Status" id="Status">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+
+                <br>
+                <div id="success"></div>
+                <div class="row">
+                  <div class="form-group col-xs-12">
+                    <button type="submit" class="btn btn-default">Save</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+        <!-- ********************** /modal-body **************** -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div> <!-- /Modal new Course-->
+
+<!-- [[[[[[[[[]]]]]]]]]  ** /MODAL ** ((((((((((((((())))))))))))))) -->
+
 
 </body>
 </html>

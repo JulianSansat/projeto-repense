@@ -31,3 +31,46 @@
 <%= link_to 'Matricular Aluno', new_classroom_path %>
 <%= link_to 'Cadastrar Aluno', new_student_path %>
 <%= link_to 'Cadastrar Curso', new_course_path %>
+
+<!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <% @classrooms.each do |classroom| %>
+          <div class="post-preview">
+            <article class="row">
+              <section class="col-md-8">
+                <a href="#">
+                  <h2 class="post-title">
+                    <small>  STUDENT </small> &nbsp; <span class="glyphicon glyphicon-education" aria-hidden="true"></span> &nbsp; <i> <%= classroom.student.name %> </i>
+                  </h2>
+                </a>
+                <a href="#">
+                  <h3 class="post-subtitle">
+                    <small>  COURSE</small> &nbsp; <span class="glyphicon glyphicon-book" aria-hidden="true"></span> &nbsp; <i> <%= classroom.course.name %></i>
+                  </h3>
+                </a>
+
+                <p class="post-meta"><small>  Entry at</small> &nbsp; <span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp; <i> <%= classroom.entry_at %></i> </p>
+              </section>
+              <section class="col-md-4">
+                <div class="btn-group-vertical" role="group" aria-label="...">
+                 <%= link_to 'Edit', edit_classroom_path(classroom) , class: "btn btn-default" %>
+                  <%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+                </div>
+              </section>
+            </article>
+          </div> <!--/POST-PREVIEW -->
+          <hr>
+          <% end %>
+            <!-- Pager -->
+            <ul class="pager">
+              <li class="next">
+                <a href="#">Older Posts &rarr;</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <hr>
